@@ -1,24 +1,7 @@
-module.exports.validateRegisterInput = (
-  nombre,
-  cedula,
-  telefono,
-  username,
-  email,
-  password,
-  confirmPassword,
-  genero,
-  perfil,
-  direccion,
-) => {
+module.exports.validateRegisterInput = (nombre, username, email, password, confirmPassword) => {
   const errors = {};
   if (nombre.trim() === '') {
     errors.nombre = 'El nombre no debe estar vacio.';
-  }
-  if (cedula.trim() === '') {
-    errors.cedula = 'La cédula no debe estar vacia.';
-  }
-  if (telefono.trim() === '') {
-    errors.telefono = 'El teléfono no debe estar vacio.';
   }
   if (username.trim() === '') {
     errors.username = 'El nombre de usuario no debe estar vacio.';
@@ -35,15 +18,6 @@ module.exports.validateRegisterInput = (
     errors.password = 'La contraseña no debe estar vacia.';
   } else if (password !== confirmPassword) {
     errors.confirmPassword = 'Las contraseñas deben coincidir';
-  }
-  if (genero.trim() === '') {
-    errors.genero = 'El genero no debe estar vacio.';
-  }
-  if (perfil.trim() === '') {
-    errors.perfil = 'El perfil no debe estar vacio.';
-  }
-  if (direccion.trim() === '') {
-    errors.direccion = 'La dirección de usuario no debe estar vacia.';
   }
 
   return {

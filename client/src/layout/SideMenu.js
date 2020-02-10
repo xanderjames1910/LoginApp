@@ -32,7 +32,7 @@ const SideMenu = () => {
         active={activeItem === 'configuracion'}
         onClick={handleItemClick}
         as={Link}
-        to='/configuracion'>
+        to='/settings'>
         Configuración
       </Menu.Item>
     </Fragment>

@@ -12,6 +12,7 @@ function generateToken(user) {
       id: user.id,
       email: user.email,
       username: user.username,
+      perfil: user.perfil,
     },
     SECRET_KEY,
     { expiresIn: '1h' },
@@ -58,23 +59,9 @@ module.exports = {
         token,
       };
     },
-    async register(
-      _,
-      { registerInput: { nombre, cedula, telefono, username, email, password, confirmPassword, genero, perfil, direccion } },
-    ) {
+    async register(_, { registerInput: { nombre, username, email, password, confirmPassword } }) {
       // Validate user data
-      const { valid, errors } = validateRegisterInput(
-        nombre,
-        cedula,
-        telefono,
-        username,
-        email,
-        password,
-        confirmPassword,
-        genero,
-        perfil,
-        direccion,
-      );
+      const { valid, errors } = validateRegisterInput(nombre, username, email, password, confirmPassword);
       if (!valid) {
         throw new UserInputError('Errors', { errors });
       }
@@ -92,14 +79,9 @@ module.exports = {
 
       const newUser = new User({
         nombre,
-        cedula,
-        telefono,
         username,
         email,
         password,
-        genero,
-        perfil,
-        direccion,
         createdAt: new Date().toISOString(),
       });
 

@@ -7,16 +7,15 @@ import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 
 import { AuthContext } from './context/auth';
-// import AuthRoute from './util/AuthRoute';
 
 import MenuBar from './layout/MenuBar';
-// import Home from './pages/Home';
-import Register from './pages/Register';
-
-import Login from './pages/Login';
 import SideMenu from './layout/SideMenu';
+
+import Inicio from './components/Inicio';
+
 import AdminSettings from './pages/AdminSettings';
-import RegisterModal from './pages/RegisterModal';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 const App = () => {
   const { user } = useContext(AuthContext);
@@ -29,11 +28,14 @@ const App = () => {
 
   return (
     <Router>
+      <Route exact path='/inicio' component={Inicio} />
       <Route exact path='/login' component={Login} />
+      <Route exact path='/register' component={Register} />
       {!user ? (
-        <Redirect to='/login' />
+        <Redirect to='/inicio' />
       ) : (
         <Fragment>
+          {console.log(user)}
           <Sidebar.Pushable>
             <Sidebar as={Menu} animation='push' icon='labeled' inverted vertical visible={visible} width='thin'>
               <SideMenu />
@@ -45,9 +47,13 @@ const App = () => {
               </Menu>
               <Container style={{ paddingTop: '4em' }}>
                 <Switch>
-                  <Route exact path='/' component={AdminSettings} />
-                  <Route exact path='/register-modal' component={RegisterModal} />
-                  <Route exact path='/register' component={Register} />
+                  {/* <Route exact path='/' component={Inicio} /> */}
+                  {console.log(user)}
+                  {user.perfil === 'Administrador' ? (
+                    <Route exact path='/settings' component={AdminSettings} />
+                  ) : (
+                    <Redirect to='/' />
+                  )}
                 </Switch>
               </Container>
             </Sidebar.Pusher>

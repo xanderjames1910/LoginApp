@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Card, Icon } from 'semantic-ui-react';
-import RegisterModal from './RegisterModal';
+import AddPersonModal from './AddPersonModal';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -30,7 +30,7 @@ const AdminSettings = () => {
           <Button floated='right' icon labelPosition='left' primary size='small' onClick={show(true)}>
             <Icon name='user' /> Añadir Usuario
           </Button>
-          <RegisterModal open={open} close={close} />
+          <AddPersonModal open={open} close={close} />
         </Card.Content>
       </Card>
       <button onClick={notify}>Notify !</button>
