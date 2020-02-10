@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { Button, Card, Form, List, Message } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Button, Card, Form, Label, List, Message, Segment } from 'semantic-ui-react';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 
@@ -106,6 +107,12 @@ const Register = props => {
             </Button>
           </Card.Content>
         </Card>
+        <Segment>
+          Ya no tienes una cuenta? Ingresa{' '}
+          <Label className='text-left-separation' basic color='blue' as={Link} to='/login'>
+            aquí
+          </Label>
+        </Segment>
       </Form>
     </div>
   );

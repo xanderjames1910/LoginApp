@@ -68,7 +68,7 @@
 }
 
 .start-btn {
-  width: 40vw !important;
+  width: 160px !important;
 }
 
 .login-register-card {
@@ -90,3 +90,20 @@
   background-size: cover;
 }
 
+.start-icon {
+  padding-bottom: 7vh !important;
+  text-align: center !important;
+}
+
+.start-grid {
+  margin: 0 !important;
+  height: 100vh !important;
+}
+
+.text-left-separation {
+  margin-left: 5px !important;
+}
+
+.ui.form {
+  max-width: 90% !important;
+}

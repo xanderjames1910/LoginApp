@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import { Card, Button, Form, Grid, List, Message } from 'semantic-ui-react';
-import { Redirect } from 'react-router-dom';
+import { Card, Button, Form, Grid, Label, List, Message, Segment } from 'semantic-ui-react';
+import { Link, Redirect } from 'react-router-dom';
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 
@@ -36,8 +36,6 @@ const Login = props => {
     <Redirect to='/' />
   ) : (
     <div>
-      {/* <Grid style={{ margin: 0 }}>
-        <Grid.Column width={16} className='centered-item'> */}
       <Form className={loading ? 'loading centered-item' : 'centered-item'} onSubmit={onSubmit} noValidate>
         <Card className='login-register-card'>
           <Card.Content>
@@ -76,9 +74,13 @@ const Login = props => {
             </Button>
           </Card.Content>
         </Card>
+        <Segment>
+          Aún no tienes una cuenta? Regístrate{' '}
+          <Label className='text-left-separation' basic color='green' as={Link} to='/register'>
+            aquí
+          </Label>
+        </Segment>
       </Form>
-      {/* </Grid.Column>
-      </Grid> */}
     </div>
   );
 };
