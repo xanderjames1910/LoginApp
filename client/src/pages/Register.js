@@ -108,7 +108,7 @@ const Register = props => {
           </Card.Content>
         </Card>
         <Segment>
-          Ya no tienes una cuenta? Ingresa{' '}
+          Ya tienes una cuenta? Ingresa{' '}
           <Label className='text-left-separation' basic color='blue' as={Link} to='/login'>
             aquí
           </Label>

@@ -35,7 +35,6 @@ const App = () => {
         <Redirect to='/inicio' />
       ) : (
         <Fragment>
-          {console.log(user)}
           <Sidebar.Pushable>
             <Sidebar as={Menu} animation='push' icon='labeled' inverted vertical visible={visible} width='thin'>
               <SideMenu />
@@ -47,8 +46,6 @@ const App = () => {
               </Menu>
               <Container style={{ paddingTop: '4em' }}>
                 <Switch>
-                  {/* <Route exact path='/' component={Inicio} /> */}
-                  {console.log(user)}
                   {user.perfil === 'Administrador' ? (
                     <Route exact path='/settings' component={AdminSettings} />
                   ) : (

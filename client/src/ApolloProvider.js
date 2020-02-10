@@ -12,7 +12,7 @@ import { AuthProvider } from './context/auth';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:5000',
-  // uri: 'https://stormy-inlet-67112.herokuapp.com/',
+  // uri: 'https://residencemanager.herokuapp.com/',
 });
 
 const authLink = setContext(() => {
