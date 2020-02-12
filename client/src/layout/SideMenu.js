@@ -35,6 +35,9 @@ const SideMenu = () => {
         to='/settings'>
         Configuración
       </Menu.Item>
+      <Menu.Item name='workList' active={activeItem === 'workList'} onClick={handleItemClick} as={Link} to='/worklist'>
+        Projectos
+      </Menu.Item>
     </Fragment>
   );
 };

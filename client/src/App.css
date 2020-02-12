@@ -45,16 +45,16 @@
 
 .ui.thin.left.sidebar,
 .ui.thin.right.sidebar {
-  width: 12vw !important;
+  width: 200px !important;
 }
 
-.ui.visible.thin.left.sidebar ~ .fixed,
+/* .ui.visible.thin.left.sidebar ~ .fixed,
 .ui.visible.thin.left.sidebar ~ .pusher {
   -webkit-transform: translate3d(12vw, 0, 0) !important;
   transform: translate3d(12vw, 0, 0) !important;
-}
+} */
 
-.pushable > .pusher {
+.pushable > .segment {
   position: relative !important;
   -webkit-backface-visibility: hidden !important;
   backface-visibility: hidden !important;
@@ -65,6 +65,10 @@
   transition: transform 500ms ease !important;
   transition: transform 500ms ease, -webkit-transform 500ms ease !important;
   z-index: 2 !important;
+}
+
+.wrapper-segment {
+  margin: 0 !important;
 }
 
 .start-btn {
